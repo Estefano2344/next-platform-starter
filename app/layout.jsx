@@ -5,14 +5,29 @@ import { Header } from '../components/header';
 export const metadata = {
     title: {
         template: '%s | Netlify',
-        default: 'Netlify Starter'
-    }
+        default: 'Netlify Starter',
+    },
 };
 
 export default function RootLayout({ children }) {
     return (
         <html lang="en">
             <head>
+                {/* Hotjar Tracking Code for Sitio 6416226 (falta el nombre) */}
+                <script
+                    dangerouslySetInnerHTML={{
+                        __html: `
+                            (function(h,o,t,j,a,r){
+                                h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+                                h._hjSettings={hjid:6416226,hjsv:6};
+                                a=o.getElementsByTagName('head')[0];
+                                r=o.createElement('script');r.async=1;
+                                r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+                                a.appendChild(r);
+                            })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+                        `,
+                    }}
+                />
                 <link rel="icon" href="/favicon.svg" sizes="any" />
             </head>
             <body className="antialiased text-white bg-blue-900">
